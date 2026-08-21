@@ -1,5 +1,5 @@
 # D792A — Foundations of Computer Science
-## Full Practice Exam · WGU · Instructor: Dr. Mario Booker
+## Full Practice Exam · WGU · Instructor: Dr. Mario DeSean Booker
 
 > **228 questions across 9 sections — all auto-graded in the browser.
 > No login required. No installation. Works on any device.**
@@ -111,7 +111,7 @@ Include the following in your email:
 4. A screenshot of your scoreboard (optional but helpful)
 5. Any questions you have about topics you missed
 
-> Your instructor uses these results to identify common trouble spots across the class and can provide targeted feedback before you attempt the official assessment.
+> I will uses these results to identify common trouble spots across the class and can provide targeted feedback before you attempt the official assessment.
 
 ---
 
@@ -124,13 +124,5 @@ Include the following in your email:
 
 ---
 
-## For the Instructor
 
-The exam is a single self-contained HTML file (`d792a_full_practice_exam.html`) with zero external dependencies. All questions, grading logic, rationale, and UI are bundled inline — no server, no database, no CDN calls required. GitHub Pages serves it as a static file.
-
-To update questions or add new sections, edit the HTML file directly and push to the `main` branch. GitHub Pages rebuilds automatically within 1–2 minutes.
-
----
-
-*D792A: Foundations of Computer Science · Western Governors University*
 *Practice exam maintained by Dr. Mario Booker · mario.booker@wgu.edu*
