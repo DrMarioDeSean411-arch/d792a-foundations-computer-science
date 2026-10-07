@@ -22,78 +22,78 @@ There is **no login, no tracking, and no data sent anywhere** — everything run
 
 ---
 
-## Exam Structure
+Exam Structure
+#	Section	Questions	Format	Competency
+1	C1 — Operating Systems	30	Multiple choice	Competency 1
+2	C2 — Program Foundations	30	Multiple choice	Competency 2
+3	C3 — Algorithm Efficiency	30	Multiple choice	Competency 3
+4	C4 — Data Profiling	30	Multiple choice	Competency 4
+5	CH1 — OS Challenge	8	Applied scenarios and scheduling traces	Competency 1
+6	CH2 — Program Foundations Challenge	8	Code traces (Python and JavaScript)	Competency 2
+7	CH3 — Algorithm Efficiency Challenge	8	Search, sort, and complexity traces	Competency 3
+8	CH4 — Data Profiling Challenge	8	Table, statistics, and NumPy traces	Competency 4
+9	Simulation (timed)	50	Mixed competencies, 65-minute limit	All four
+	Total	202		
 
-| # | Section | Questions | Format | Competency |
-|---|---------|-----------|--------|------------|
-| 1 | C1 — Operating Systems | 40 | Multiple choice | Competency 1 |
-| 2 | C2 — Foundational Principles & Program Elements | 40 | Multiple choice | Competency 2 |
-| 3 | C3 — Algorithm Efficiency & Effectiveness | 40 | Multiple choice | Competency 3 |
-| 4 | C4 — Data Manipulation & Insights | 40 | Multiple choice | Competency 4 |
-| 5 | CH1 — OS Challenge | 12 | Applied scenario MC | Competency 1 |
-| 6 | CH2 — Foundational Principles Challenge | 12 | Code-trace MC | Competency 2 |
-| 7 | CH3 — Algorithm Efficiency Challenge | 12 | Algorithm-trace MC | Competency 3 |
-| 8 | CH4 — Data Manipulation Challenge | 12 | Data-trace MC | Competency 4 |
-| 9 | Simulation | 20 | Scenario MC (mixed) | All four competencies |
-| | **Total** | **228** | | |
+Sections 1–4 split 40% Foundational, 40% Intermediate, 20% Advanced. The simulation uses the same split (20 / 20 / 10).
 
----
+How to Use This Exam
+Sections 1–8 (practice mode)
+Pick a section from the buttons at the top.
+Read the question, including any code or table.
+Click an answer. It locks, and the correct answer, an explanation, and an instructor note appear.
+Use the numbered tabs to jump around. Green is correct, red is wrong.
+Watch the competency breakdown at the bottom. Anything under 80% needs review.
+Section 9 (timed simulation)
 
-## How to Use This Exam
+This section behaves like the real thing.
 
-1. Click any section button at the top of the exam page (all 9 are live)
-2. Read each question carefully — challenge and simulation questions include scenario context or a pseudocode/data trace you must work through
-3. Click your answer
-4. The correct answer, full explanation, and instructor note appear immediately
-5. Use the tab row to jump between questions or track what you have answered
-6. Watch your competency breakdown bars at the bottom — anything below 80% needs review
+Click Begin timed attempt. A 65-minute clock starts.
+Answer 50 mixed questions. There is no feedback while you work. You can change answers and flag questions to revisit.
+Click Submit exam when you are done, or let the clock run out and the attempt submits itself.
+You get a score, a breakdown by competency, and a full explanation for every question.
+Click Retake simulation to try again.
 
-### Section-Specific Notes
-- **C1–C4** are straightforward multiple choice, split 40% Foundational / 40% Intermediate / 20% Advanced per section
-- **CH1** presents an applied real-world OS scenario and asks you to diagnose or apply a concept — no code involved
-- **CH2, CH3, CH4** each include a pseudocode, algorithm, or data snippet you must trace step-by-step before answering; rationales show the full trace
-- **Simulation** questions open with a multi-sentence workplace scenario drawing on more than one competency — read the scenario carefully before answering, since a wrong answer is plausible without it
+Work without notes for the simulation. Treat the score as a readiness check before you schedule the official attempt.
 
----
+Scoring Guide
+Score	What it means
+90–100%	Exam ready. Schedule your assessment.
+80–89%	Nearly ready. Review your weakest competency.
+70–79%	Close. Focus on the sections below 80%.
+Below 70%	More preparation needed. Revisit the course material.
 
-## Scoring Guide
+Readiness target: 80%.
 
-| Score | What it means |
-|-------|---------------|
-| 90–100% | Exam ready — schedule your assessment |
-| 80–89% | Nearly ready — review your weak competency areas |
-| 70–79% | Close — focus study on the sections below 80% |
-| Below 70% | More preparation needed — revisit course materials |
+The breakdown bars at the bottom of the page show your score for each competency and for each difficulty level.
 
-**Passing threshold for the official WGU assessment: 80%**
+Topics Covered
 
-The breakdown bars at the bottom of the exam page show your score broken down by:
-- Competency 1 — Operating Systems
-- Competency 2 — Foundational Principles & Program Elements
-- Competency 3 — Algorithm Efficiency & Effectiveness
-- Competency 4 — Data Manipulation & Insights
-- Difficulty level (Foundational / Intermediate / Advanced)
+Competency 1 — Operating Systems The four practical OS benefits (security, portability, resource sharing, protection) · OS types (desktop, server, mobile, embedded) · the kernel and kernel designs (monolithic, microkernel, hybrid) · device drivers · programs versus processes · scheduling (first-come first-served, round-robin, priority) · file system organization · memory isolation · the GUI versus the OS beneath it · tools (chmod, top and htop, Task Manager, Disk Utility, the shell)
 
-Use these to target your remaining study time.
+Competency 2 — Program Foundations Abstraction and decomposition · sequence, selection, and iteration · variables and data types · type errors · arithmetic, comparison, and logical operators · parameters and return values · functions versus methods · packages and libraries · lists and dictionaries · Python list methods (append, remove, sort) · JavaScript array methods (slice, splice, forEach) · data representation
 
----
+Competency 3 — Algorithm Efficiency Big O (O(1), O(log n), O(n), O(n log n), O(n squared)) · array, linked list, hash table, stack, queue, and balanced tree trade-offs · linear and binary search · bubble, merge, and quick sort · worst case · benchmarking versus Big O · profiling · memory as part of efficiency · when a simple algorithm is the right choice
 
-## Topics Covered
+Competency 4 — Data Profiling Profiling a dataset · subsetting (rows, columns, combined filters, SQL equivalents) · pandas commands (describe, isnull, groupby) · mean, median, mode, and standard deviation · outliers · missing values · uniqueness checks · data distribution and skew · 1D and 2D arrays · aggregation, filtering, indexing, and slicing · NumPy vectorization · pandas DataFrames
 
-**Competency 1 — Operating Systems**
-OS purpose and core functions · process management and scheduling · memory management (including virtual memory) · file systems and file management · CLI vs. GUI · single/multi-user, multitasking, and real-time OS types · the kernel · device drivers and hardware abstraction · system vs. application software · how the OS mediates hardware and applications · common OS examples
+After You Complete the Exam
 
-**Competency 2 — Foundational Principles & Program Elements**
-Binary number systems and data representation · Boolean logic and logic gates · basic computer architecture (CPU, memory, I/O, buses) · source code and hardware execution · variables, data types, and program structure · control structures (sequence, selection, iteration) · the algorithm-program-machine relationship · abstraction
+Email your results to your instructor:
 
-**Competency 3 — Algorithm Efficiency & Effectiveness**
-Algorithm design properties · pseudocode and flowchart tracing · time complexity and Big O notation · space complexity · comparing algorithms · linear vs. binary search · sorting algorithm comparison (selection sort, bubble sort) · efficiency vs. simplicity tradeoffs · effectiveness vs. efficiency
+📧 mario.booker@wgu.edu
 
-**Competency 4 — Data Manipulation & Insights**
-Basic data structures (arrays, records, tables) · data types for different kinds of data · reading, filtering, and transforming data · basic descriptive statistics (mean, median, mode, range) · identifying patterns and trends · data cleaning concepts · raw data vs. derived insight · querying/filtering logic on tabular data
+Subject line: D792A Practice Exam Results — [Your Name] — [Date]
 
----
+In the body of your email, include:
 
+Your overall score from the simulation results screen
+Your score for each of the four competencies
+The topic you found most challenging
+A screenshot of your results (optional but helpful)
+Any questions about topics you missed
+
+Your instructor uses these results to spot common trouble areas across the class and can give targeted feedback before you attempt the official assessme
 ## After You Complete the Exam
 
 **Email your results to your instructor:**
@@ -115,12 +115,6 @@ Include the following in your email:
 
 ---
 
-## Resources
-
-| Resource | Link |
-|----------|------|
-| WGU Student Support | [my.wgu.edu](https://my.wgu.edu) |
-| zyBooks (D792A) | Accessed through your WGU student portal |
 
 ---
 
