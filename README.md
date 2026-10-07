@@ -1,9 +1,6 @@
 # D792A — Foundations of Computer Science
 ## Full Practice Exam · WGU · Instructor: Dr. Mario DeSean Booker
-
-> **228 questions across 9 sections — all auto-graded in the browser.
-> No login required. No installation. Works on any device.**
-
+202 questions across 9 sections, auto-graded in the browser, including a 50-question timed simulation. No login required. No installation. Works on any device.
 ---
 
 ### Live Exam Link
