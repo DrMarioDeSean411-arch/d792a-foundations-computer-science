@@ -166,6 +166,76 @@
   .results .sub { font-size: 13px; color: var(--label-dark); margin: 4px 0 12px; }
   .results .hint { font-size: 12px; color: var(--label-dark); margin-top: 10px; }
   .nav-buttons .mid { display: flex; gap: 8px; }
+
+  /* ---- Labs ---- */
+  #labCard { display: none; }
+  body.lab-mode #labCard { display: block; }
+  body.lab-mode #examCard, body.lab-mode #sectionSummaryCard, body.lab-mode #breakdownCard { display: none !important; }
+  .nav-btn.lab-nav { margin-left: auto; border-style: dashed; }
+  .nav-btn.lab-nav.active { border-style: solid; }
+  .lab-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .lab-chip { border: 0.5px solid var(--border); background: #fff; padding: 8px 12px; border-radius: 9px; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .lab-chip:hover { background: var(--hover); }
+  .lab-chip.on.c1 { background: var(--green-bg); color: var(--green); border-color: var(--green); }
+  .lab-chip.on.c2 { background: var(--amber-bg); color: var(--amber); border-color: var(--amber); }
+  .lab-chip.on.c3 { background: var(--purple-bg); color: var(--purple); border-color: var(--purple); }
+  .lab-chip.on.c4 { background: var(--blue-bg); color: var(--blue); border-color: var(--blue); }
+  .lab-back { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 12px; margin-bottom: 14px; background: var(--bg); border: 0.5px solid var(--border); border-radius: 10px; font-size: 13px; color: var(--label-dark); }
+  .lab-head h2 { margin: 0 0 4px; font-size: 18px; }
+  .lab-head p { margin: 0 0 12px; font-size: 14px; line-height: 1.55; color: #333; }
+  .lab-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; border-bottom: 0.5px solid var(--border); padding-bottom: 10px; }
+  .lab-tab { border: 0.5px solid var(--border); background: #fff; padding: 7px 12px; border-radius: 8px; font-size: 13px; cursor: pointer; }
+  .lab-tab:hover { background: var(--hover); }
+  .lab-tab.on { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+  .lab-sec { border: 0.5px solid var(--border); border-radius: 10px; padding: 14px; margin-bottom: 12px; background: #fff; }
+  .lab-sec.focus { border-color: #1a1a1a; box-shadow: 0 0 0 2px rgba(26,26,26,0.12); }
+  .lab-sec h3 { margin: 0 0 6px; font-size: 15px; }
+  .lab-sec p, .lab-sec li { font-size: 14px; line-height: 1.6; color: #333; }
+  .lab-sec p { margin: 0 0 8px; }
+  .lab-sec ul { margin: 0 0 8px; padding-left: 20px; }
+  .lab-sec table, .lab-out table { border-collapse: collapse; width: 100%; font-size: 13px; margin: 6px 0; }
+  .lab-sec th, .lab-sec td, .lab-out th, .lab-out td { border: 0.5px solid var(--border); padding: 6px 8px; text-align: left; vertical-align: top; }
+  .lab-sec th, .lab-out th { background: var(--bg); font-weight: 600; }
+  .lab-out td.num, .lab-out th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .lab-try { background: var(--amber-bg); color: #5c3a05; border-radius: 10px; padding: 10px 12px; font-size: 13px; line-height: 1.55; margin: 12px 0 0; }
+  .lab-try strong { color: var(--amber); }
+  .lab-controls { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: flex-end; margin-bottom: 12px; }
+  .lab-controls label { display: flex; flex-direction: column; gap: 3px; font-size: 12px; color: var(--label-dark); font-weight: 600; }
+  .lab-controls input, .lab-controls select, .lab-controls textarea, .lab-sec textarea {
+    font: inherit; font-size: 13px; padding: 6px 8px; border: 0.5px solid #c9c6be; border-radius: 7px; background: #fff; color: #1a1a1a;
+  }
+  .lab-controls input[type=number] { width: 70px; }
+  .lab-controls input[type=text] { width: 150px; }
+  textarea.lab-data { width: 100%; min-height: 190px; font-family: "SFMono-Regular", Consolas, Menlo, monospace; font-size: 12.5px; line-height: 1.5; }
+  .lab-out { margin-top: 10px; overflow-x: auto; }
+  .lab-note { font-size: 12.5px; color: var(--label-dark); margin: 6px 0; line-height: 1.5; }
+  .lab-err { font-size: 13px; color: var(--red); background: var(--red-bg); border-radius: 8px; padding: 8px 10px; margin: 6px 0; }
+  .gantt { display: flex; width: 100%; height: 38px; border-radius: 8px; overflow: hidden; border: 0.5px solid var(--border); margin: 8px 0 2px; }
+  .gantt div { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 12px; font-weight: 700; border-right: 1px solid rgba(255,255,255,0.7); min-width: 0; }
+  .gantt-axis { display: flex; width: 100%; font-size: 11px; color: var(--label-dark); }
+  .gantt-axis div { text-align: right; padding-right: 2px; border-right: 0.5px solid var(--border); min-width: 0; overflow: hidden; }
+  .cells { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0; }
+  .cell { min-width: 44px; text-align: center; border: 0.5px solid #c9c6be; border-radius: 7px; padding: 6px 4px 4px; background: #fff; font-variant-numeric: tabular-nums; }
+  .cell b { display: block; font-size: 15px; }
+  .cell i { display: block; font-style: normal; font-size: 10px; color: var(--label); }
+  .cell.out { background: var(--bg); color: #b5b2aa; }
+  .cell.look { background: var(--amber-bg); border-color: var(--amber); color: var(--amber); }
+  .cell.hit { background: var(--green-bg); border-color: var(--green); color: var(--green); }
+  .cell.sel { background: var(--blue-bg); border-color: var(--blue); color: var(--blue); font-weight: 700; }
+  .cell.swap { background: var(--red-bg); border-color: var(--red); color: var(--red); }
+  .cell.done { background: var(--green-bg); border-color: var(--green); color: var(--green); }
+  .step-msg { font-size: 14px; line-height: 1.55; min-height: 44px; background: var(--bg); border-radius: 8px; padding: 10px 12px; margin: 8px 0; }
+  .stat-line { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--label-dark); margin: 6px 0; }
+  .stat-line b { color: #1a1a1a; }
+  td.miss { background: var(--amber-bg); color: var(--amber); font-style: italic; }
+  td.bad { background: var(--red-bg); color: var(--red); font-weight: 700; }
+  tr.dupe td { background: var(--red-bg); }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 6px 0; font-size: 13px; }
+  .legend label { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+  svg.chart { width: 100%; height: auto; background: #fff; border: 0.5px solid var(--border); border-radius: 8px; }
+  .btn.lab-link { margin-top: 10px; background: var(--blue-bg); color: var(--blue); border-color: var(--blue); }
+  .btn.lab-link:hover { background: #d6e7f7; }
+  @media (max-width: 600px) { .nav-btn.lab-nav { margin-left: 0; } .lab-controls input[type=text] { width: 120px; } }
 </style>
 </head>
 <body>
@@ -212,6 +282,8 @@
       <button id="nextBtn" onclick="go(1)">Next →</button>
     </div>
   </div>
+
+  <div class="card" id="labCard"></div>
 
   <div class="card" id="breakdownCard">
     <div class="breakdown-title">Competency Breakdown</div>
@@ -3774,16 +3846,24 @@ function buildNav() {
   nav.innerHTML = '';
   SECTIONS.forEach(s => {
     const btn = document.createElement('button');
-    btn.className = 'nav-btn' + (s.key === currentSection ? ' active' : '');
+    btn.className = 'nav-btn' + (s.key === currentSection && !LAB.open ? ' active' : '');
     let label = s.label;
     if (s.key === 'sim' && SIM.status === 'running') label += '<span class="soon">in progress</span>';
     btn.innerHTML = label;
     btn.onclick = () => switchSection(s.key);
     nav.appendChild(btn);
   });
+  const lb = document.createElement('button');
+  const locked = SIM.status === 'running';
+  lb.className = 'nav-btn lab-nav' + (LAB.open ? ' active' : '');
+  lb.innerHTML = 'Labs' + (locked ? '<span class="soon">locked during timed attempt</span>' : '');
+  lb.disabled = locked;
+  lb.onclick = () => openLab(LAB.lab, null, null, false);
+  nav.appendChild(lb);
 }
 
 function switchSection(key) {
+  exitLab();
   currentSection = key;
   currentIndex = 0;
   buildNav();
@@ -3935,6 +4015,7 @@ function renderQuestion() {
     if (done && selected === undefined) html += '<div class="rationale"><em>Not answered.</em></div>';
     html += '<div class="rationale"><strong>' + LETTERS[q.ans] + ' is correct.</strong> ' + escapeHtml(q.rationale) + '</div>';
     html += '<div class="misconception">' + escapeHtml(q.misconception) + '</div>';
+    html += labLinkHtml(q);
     html += '</div>';
   }
 
@@ -3980,6 +4061,7 @@ function go(delta) {
 
 /* ---------------- simulation lifecycle ---------------- */
 function startSim() {
+  exitLab();
   SIM.status = 'running';
   SIM.secondsLeft = SIM_MINUTES * 60;
   SIM.usedSeconds = 0;
@@ -4098,6 +4180,833 @@ function renderBreakdown() {
   addRow('Intermediate', dt.inter, 'var(--amber)');
   addRow('Advanced', dt.adv, 'var(--red)');
 }
+
+
+/* =========================================================
+   LABS — optional, ungraded, session-only.
+   Never touches STATE, SELS, FLAGS or the scoreboard.
+   ========================================================= */
+const LAB_INFO = {
+  c1: { name: 'C1 · OS Lab', title: 'Operating Systems Lab',
+        blurb: 'Watch three scheduling policies run the same four processes, then review the core OS ideas the exam keeps returning to.',
+        tabs: [['scheduler', 'Scheduler'], ['concepts', 'OS Concepts']] },
+  c2: { name: 'C2 · Code Lab', title: 'Program Foundations Lab',
+        blurb: 'Run Python and JavaScript list methods against a list and see exactly what changes, what is returned, and what stays put.',
+        tabs: [['lists', 'List Methods'], ['concepts', 'Core Concepts']] },
+  c3: { name: 'C3 · Algorithm Lab', title: 'Algorithm Efficiency Lab',
+        blurb: 'Step through searches and a sort, then see how operation counts grow as the input grows.',
+        tabs: [['search', 'Search Stepper'], ['growth', 'Big O Growth'], ['sort', 'Sorting & Structures']] },
+  c4: { name: 'C4 · Data Lab', title: 'Data Profiling Lab',
+        blurb: 'Edit a small dataset and watch the profile change, build a subset in pandas and SQL, and slice a NumPy array.',
+        tabs: [['profile', 'Profiler'], ['subset', 'Subsetting'], ['arrays', 'Arrays & NumPy']] }
+};
+
+/* topic -> [lab, tab, section-id]  (every topic used by a question must appear here) */
+const TOPIC_LAB = {
+  'Four OS Benefits': ['c1', 'concepts', 'benefits'],
+  'OS Types': ['c1', 'concepts', 'types'],
+  'Kernel & Drivers': ['c1', 'concepts', 'kernel'],
+  'Drivers': ['c1', 'concepts', 'kernel'],
+  'Processes & Scheduling': ['c1', 'scheduler', 'sched'],
+  'Scheduling': ['c1', 'scheduler', 'sched'],
+  'File System & Memory': ['c1', 'concepts', 'fsmem'],
+  'OS Tools & Command Line': ['c1', 'concepts', 'tools'],
+
+  'Abstraction & Decomposition': ['c2', 'concepts', 'abs'],
+  'Variables & Data Types': ['c2', 'concepts', 'types'],
+  'Data Types': ['c2', 'concepts', 'types'],
+  'Operators': ['c2', 'concepts', 'ops'],
+  'Control Flow': ['c2', 'concepts', 'flow'],
+  'Iteration': ['c2', 'concepts', 'flow'],
+  'Selection': ['c2', 'concepts', 'flow'],
+  'Functions, Methods & Packages': ['c2', 'concepts', 'func'],
+  'Functions': ['c2', 'concepts', 'func'],
+  'Lists, Dictionaries & Methods': ['c2', 'lists', 'lst'],
+  'Lists': ['c2', 'lists', 'lst'],
+  'Dictionaries': ['c2', 'lists', 'lst'],
+  'JavaScript Arrays': ['c2', 'lists', 'lst'],
+
+  'Big O Notation': ['c3', 'growth', 'grow'],
+  'Complexity of Code': ['c3', 'growth', 'grow'],
+  'Evaluating Algorithms': ['c3', 'growth', 'eval'],
+  'Searching': ['c3', 'search', 'srch'],
+  'Linear Search': ['c3', 'search', 'srch'],
+  'Binary Search': ['c3', 'search', 'srch'],
+  'Sorting': ['c3', 'sort', 'bub'],
+  'Bubble Sort': ['c3', 'sort', 'bub'],
+  'Data Structure Trade-offs': ['c3', 'sort', 'ds'],
+  'Data Structures': ['c3', 'sort', 'ds'],
+
+  'Profiling a Dataset': ['c4', 'profile', 'prof'],
+  'Missing, Duplicate & Outlier Data': ['c4', 'profile', 'prof'],
+  'Missing Data': ['c4', 'profile', 'prof'],
+  'Uniqueness': ['c4', 'profile', 'prof'],
+  'Descriptive Statistics': ['c4', 'profile', 'prof'],
+  'Data Distribution': ['c4', 'profile', 'prof'],
+  'Subsetting & Filtering': ['c4', 'subset', 'sub'],
+  'Subsetting': ['c4', 'subset', 'sub'],
+  'Arrays, NumPy & pandas': ['c4', 'arrays', 'slice'],
+  'NumPy Slicing': ['c4', 'arrays', 'slice'],
+  'Aggregation': ['c4', 'arrays', 'agg']
+};
+
+const LAB = { open: false, lab: 'c1', tab: { c1: 'scheduler', c2: 'lists', c3: 'search', c4: 'profile' }, from: null, focus: null };
+
+function labFor(topic) { return TOPIC_LAB[topic] || null; }
+function labLinkLabel(topic) {
+  const t = labFor(topic); if (!t) return '';
+  const tabName = LAB_INFO[t[0]].tabs.filter(x => x[0] === t[1])[0][1];
+  return 'Review in Lab → ' + LAB_INFO[t[0]].name + ' · ' + tabName;
+}
+function labLinkHtml(q) {
+  const t = labFor(q.topic);
+  if (!t) return '';
+  return '<button class="btn lab-link" onclick="openLabForTopic()">' + escapeHtml(labLinkLabel(q.topic)) + '</button>';
+}
+function openLabForTopic() {
+  if (isLive()) return;
+  const q = QUESTIONS[currentSection][currentIndex];
+  const t = labFor(q.topic);
+  if (!t) return;
+  openLab(t[0], t[1], t[2], true);
+}
+
+function openLab(lab, tab, focus, fromQuestion) {
+  if (isLive()) return;                       // no help during the live timed attempt
+  LAB.open = true;
+  LAB.lab = lab || LAB.lab;
+  if (tab) LAB.tab[LAB.lab] = tab;
+  LAB.focus = focus || null;
+  LAB.from = fromQuestion ? { section: currentSection, index: currentIndex } : null;
+  document.body.classList.add('lab-mode');
+  buildNav();
+  renderLab();
+}
+function exitLab() {
+  if (!LAB.open) return;
+  LAB.open = false;
+  document.body.classList.remove('lab-mode');
+}
+function backToQuestion() {
+  const f = LAB.from;
+  exitLab();
+  buildNav();
+  if (f) { currentSection = f.section; currentIndex = f.index; }
+  buildNav(); buildTabRow(); renderQuestion(); updateScoreboard();
+}
+function labPickLab(l) { LAB.focus = null; LAB.lab = l; renderLab(); }
+function labPickTab(t) { LAB.focus = null; LAB.tab[LAB.lab] = t; renderLab(); }
+
+function LC(s) { return '<pre class="code">' + escapeHtml(s) + '</pre>'; }
+function lsec(id, title, body) {
+  return '<div class="lab-sec' + (LAB.focus === id ? ' focus' : '') + '" id="labsec-' + id + '"><h3>' + title + '</h3>' + body + '</div>';
+}
+function tryBox(t) { return '<div class="lab-try"><strong>Try this:</strong> ' + t + '</div>'; }
+function labNum(id, dflt) { const el = document.getElementById(id); const v = el ? parseFloat(el.value) : NaN; return isNaN(v) ? dflt : v; }
+function labVal(id) { const el = document.getElementById(id); return el ? el.value : ''; }
+function fmt(n) { return Number.isInteger(n) ? String(n) : String(Math.round(n * 100) / 100); }
+
+function renderLab() {
+  const card = document.getElementById('labCard');
+  const info = LAB_INFO[LAB.lab];
+  let h = '';
+  if (LAB.from) {
+    h += '<div class="lab-back"><button class="btn" onclick="backToQuestion()">← Back to question ' + (LAB.from.index + 1) + '</button>' +
+         '<span>Labs are practice only. Nothing here changes your score.</span></div>';
+  }
+  h += '<div class="lab-chips">';
+  ['c1', 'c2', 'c3', 'c4'].forEach(l => {
+    h += '<button class="lab-chip ' + l + (l === LAB.lab ? ' on' : '') + '" onclick="labPickLab(\'' + l + '\')">' + LAB_INFO[l].name + '</button>';
+  });
+  h += '</div><div class="lab-head"><h2>' + info.title + '</h2><p>' + info.blurb + '</p></div><div class="lab-tabs">';
+  info.tabs.forEach(t => {
+    h += '<button class="lab-tab' + (LAB.tab[LAB.lab] === t[0] ? ' on' : '') + '" onclick="labPickTab(\'' + t[0] + '\')">' + t[1] + '</button>';
+  });
+  h += '</div><div id="labPanel"></div>';
+  card.innerHTML = h;
+  const key = LAB.lab + '/' + LAB.tab[LAB.lab];
+  const panel = document.getElementById('labPanel');
+  const builder = LAB_PANELS[key];
+  panel.innerHTML = builder.html();
+  if (builder.init) builder.init();
+  if (LAB.focus) {
+    const el = document.getElementById('labsec-' + LAB.focus);
+    if (el && typeof el.scrollIntoView === 'function') el.scrollIntoView({ block: 'center' });
+  }
+}
+
+/* ---------- shared colors ---------- */
+const PCOL = ['#1D9E75', '#B45309', '#534AB7', '#2563A8'];
+
+/* =============== C1 · Scheduler =============== */
+const SCHED_DEFAULT = [[8, 3], [3, 1], [5, 4], [2, 2]];   // [burst, priority]
+function schedHtml() {
+  let rows = '';
+  for (let i = 0; i < 4; i++) {
+    rows += '<tr><td><b style="color:' + PCOL[i] + '">P' + (i + 1) + '</b></td>' +
+      '<td><input type="number" min="1" max="20" id="sb' + i + '" value="' + SCHED_DEFAULT[i][0] + '" oninput="schedRun()"></td>' +
+      '<td><input type="number" min="1" max="9" id="sp' + i + '" value="' + SCHED_DEFAULT[i][1] + '" oninput="schedRun()"></td></tr>';
+  }
+  return lsec('sched', 'Same four processes, three policies',
+    '<p>All four processes arrive at time 0. Pick a policy and edit the burst times (CPU time needed) or priorities. <em>A lower priority number runs first.</em></p>' +
+    '<div class="lab-controls"><label>Policy<select id="sAlgo" onchange="schedRun()">' +
+    '<option value="fcfs">First-come first-served</option><option value="rr">Round-robin</option><option value="pri">Priority (non-preemptive)</option></select></label>' +
+    '<label>Time quantum (round-robin)<input type="number" min="1" max="10" id="sQ" value="3" oninput="schedRun()"></label>' +
+    '<button class="btn" onclick="schedReset()">Reset values</button></div>' +
+    '<table><tr><th>Process</th><th>Burst time</th><th>Priority</th></tr>' + rows + '</table>' +
+    '<div class="lab-out" id="schedOut"></div>' +
+    tryBox('Under first-come first-served, make P1 the longest job and note the average wait. Then switch to round-robin with a quantum of 2. Which short job gains the most? Finally give the longest job priority 1 and see who waits.')
+  ) + lsec('sched-notes', 'Reading the result',
+    '<ul><li><strong>Completion time</strong> is when the process finishes. <strong>Waiting time</strong> is completion minus burst time, since everything arrives at 0.</li>' +
+    '<li><strong>First-come first-served</strong> runs jobs to completion in arrival order. One long job at the front delays everyone behind it.</li>' +
+    '<li><strong>Round-robin</strong> gives each process a slice (the quantum) and rotates. Short jobs finish sooner, at the cost of more switching.</li>' +
+    '<li><strong>Priority</strong> always picks the most urgent waiting process. Low-priority work can starve if urgent jobs keep arriving.</li></ul>');
+}
+function schedReset() {
+  for (let i = 0; i < 4; i++) { document.getElementById('sb' + i).value = SCHED_DEFAULT[i][0]; document.getElementById('sp' + i).value = SCHED_DEFAULT[i][1]; }
+  document.getElementById('sQ').value = 3; document.getElementById('sAlgo').value = 'fcfs';
+  schedRun();
+}
+function schedCompute(algo, procs, quantum) {
+  const segs = [];
+  let t = 0;
+  if (algo === 'fcfs' || algo === 'pri') {
+    const order = procs.map((p, i) => i);
+    if (algo === 'pri') order.sort((a, b) => procs[a].pri - procs[b].pri || a - b);
+    order.forEach(i => { segs.push({ p: i, s: t, e: t + procs[i].burst }); t += procs[i].burst; });
+  } else {
+    const rem = procs.map(p => p.burst);
+    const q = [0, 1, 2, 3];
+    while (q.length) {
+      const i = q.shift();
+      const run = Math.min(quantum, rem[i]);
+      segs.push({ p: i, s: t, e: t + run });
+      t += run; rem[i] -= run;
+      if (rem[i] > 0) q.push(i);
+    }
+  }
+  const done = [0, 0, 0, 0];
+  segs.forEach(s => { done[s.p] = s.e; });
+  return { segs, done, total: t };
+}
+function schedRun() {
+  const procs = [];
+  for (let i = 0; i < 4; i++) {
+    procs.push({ burst: Math.max(1, Math.min(20, Math.round(labNum('sb' + i, 1)))), pri: Math.round(labNum('sp' + i, 1)) });
+  }
+  const algo = labVal('sAlgo') || 'fcfs';
+  const quantum = Math.max(1, Math.min(10, Math.round(labNum('sQ', 3))));
+  document.getElementById('sQ').disabled = algo !== 'rr';
+  const r = schedCompute(algo, procs, quantum);
+  let g = '<div class="gantt">', ax = '<div class="gantt-axis">';
+  r.segs.forEach(s => {
+    const w = (s.e - s.s) / r.total * 100;
+    g += '<div style="width:' + w + '%;background:' + PCOL[s.p] + '">P' + (s.p + 1) + '</div>';
+    ax += '<div style="width:' + w + '%">' + s.e + '</div>';
+  });
+  g += '</div>'; ax += '</div>';
+  let tbl = '<table><tr><th>Process</th><th class="num">Burst</th><th class="num">Completes at</th><th class="num">Waited</th></tr>';
+  let sumW = 0;
+  procs.forEach((p, i) => {
+    const w = r.done[i] - p.burst; sumW += w;
+    tbl += '<tr><td><b style="color:' + PCOL[i] + '">P' + (i + 1) + '</b></td><td class="num">' + p.burst + '</td><td class="num">' + r.done[i] + '</td><td class="num">' + w + '</td></tr>';
+  });
+  tbl += '</table>';
+  const order = r.segs.map(s => 'P' + (s.p + 1)).join(' → ');
+  document.getElementById('schedOut').innerHTML =
+    '<div class="lab-note">Run order: ' + order + '</div>' + g + ax + tbl +
+    '<div class="stat-line"><span>Average waiting time: <b>' + fmt(sumW / 4) + '</b></span><span>Total time: <b>' + r.total + '</b></span><span>Context switches: <b>' + (r.segs.length - 1) + '</b></span></div>';
+}
+
+/* =============== C1 · Concepts =============== */
+function osConceptsHtml() {
+  return lsec('benefits', 'The four practical benefits of an OS',
+    '<table><tr><th>Benefit</th><th>What it means</th><th>Clue in a scenario</th></tr>' +
+    '<tr><td><b>Security</b></td><td>Controls who and what may use the system.</td><td>Logins, permissions, one user cannot open another user\'s files.</td></tr>' +
+    '<tr><td><b>Portability</b></td><td>Programs run on different hardware because the OS hides the device details.</td><td>Same app, different brand of disk, screen or printer.</td></tr>' +
+    '<tr><td><b>Resource sharing</b></td><td>CPU, memory, disk and devices are divided among running programs.</td><td>Several programs doing work at the same moment.</td></tr>' +
+    '<tr><td><b>Protection</b></td><td>One program cannot damage another program or the OS itself.</td><td>A crashing app leaves the rest of the machine running.</td></tr></table>' +
+    '<p>Security is about outsiders and permissions. Protection is about programs staying out of each other\'s way.</p>' +
+    tryBox('Take any scenario sentence and underline the clue first. Name the benefit before you read the answer choices.')) +
+  lsec('types', 'Types of operating system',
+    '<ul><li><strong>Desktop:</strong> one person at a keyboard, many apps open at once (Windows, macOS, Linux desktops).</li>' +
+    '<li><strong>Server:</strong> serves many users or requests over a network and runs for long periods unattended.</li>' +
+    '<li><strong>Mobile:</strong> touch input, battery limits, apps from a store (Android, iOS).</li>' +
+    '<li><strong>Embedded:</strong> built into a device with a narrow job, such as a router or a car controller, with little or no user interface.</li></ul>') +
+  lsec('kernel', 'Kernel, kernel designs, and drivers',
+    '<p>The <strong>kernel</strong> is the core of the OS. It manages the CPU, memory and devices, and every request from a program passes through it.</p>' +
+    '<table><tr><th>Design</th><th>Idea</th><th>Trade-off</th></tr>' +
+    '<tr><td>Monolithic</td><td>Nearly all OS services run inside the kernel.</td><td>Fast, but a faulty driver can bring the whole system down.</td></tr>' +
+    '<tr><td>Microkernel</td><td>Only the essentials stay in the kernel; other services run outside it.</td><td>More stable and easier to isolate, with extra message passing.</td></tr>' +
+    '<tr><td>Hybrid</td><td>A mix of both approaches.</td><td>Keeps speed for core pieces while moving some services out.</td></tr></table>' +
+    '<p>A <strong>device driver</strong> translates the OS\'s general requests into the commands one particular device understands. That translation layer is why a program does not care which brand of device is attached.</p>') +
+  lsec('fsmem', 'File system and memory',
+    '<ul><li>The <strong>file system</strong> organizes storage into named files and folders and tracks details such as size, location and permissions.</li>' +
+    '<li><strong>Memory management</strong> hands each process its own region of memory and keeps processes out of each other\'s regions. That is what makes protection possible.</li>' +
+    '<li><strong>Virtual memory</strong> lets the OS use disk space to stretch the memory available when RAM fills up, at a cost in speed.</li>' +
+    '<li>A <strong>program</strong> is a file of instructions on disk. A <strong>process</strong> is that program while it is running, with its own memory and state.</li></ul>') +
+  lsec('tools', 'OS tools you should be able to name',
+    '<table><tr><th>Tool</th><th>What it does</th></tr>' +
+    '<tr><td><code>chmod</code></td><td>Changes file permissions on Linux and macOS.</td></tr>' +
+    '<tr><td><code>top</code> / <code>htop</code></td><td>Live view of running processes, CPU and memory use in a Linux or macOS terminal.</td></tr>' +
+    '<tr><td>Task Manager</td><td>Windows tool for viewing and ending processes and checking resource use.</td></tr>' +
+    '<tr><td>Disk Utility</td><td>macOS tool for formatting, partitioning and checking disks.</td></tr>' +
+    '<tr><td>Shell</td><td>Text interface where commands are typed and run.</td></tr></table>' +
+    tryBox('For each tool, write the one problem it would solve. A computer feels slow: which tool shows what is eating the CPU on Windows? On Linux?'));
+}
+
+/* =============== C2 · List methods =============== */
+const LIST_OPS = {
+  py: {
+    append: { code: 'items.append({0})', args: ['value'], d: ['60'] },
+    remove: { code: 'items.remove({0})', args: ['value'], d: ['20'] },
+    sort: { code: 'items.sort()', args: [], d: [] },
+    sorted: { code: 'result = sorted(items)', args: [], d: [] }
+  },
+  js: {
+    slice: { code: 'items.slice({0}, {1})', args: ['start', 'end (exclusive)'], d: ['1', '3'] },
+    splice: { code: 'items.splice({0}, {1}{2})', args: ['start', 'deleteCount', 'items to insert (comma list, optional)'], d: ['1', '2', ''] },
+    forEach: { code: 'items.forEach(n => out.push(n * 2))', args: [], d: [] }
+  }
+};
+function listHtml() {
+  return lsec('lst', 'Run a method, then compare before and after',
+    '<div class="lab-controls"><label>Starting list<input type="text" id="lsBase" value="40, 10, 50, 20, 30" style="width:190px" oninput="listRun()"></label>' +
+    '<label>Language<select id="lsLang" onchange="listLang()"><option value="py">Python</option><option value="js">JavaScript</option></select></label>' +
+    '<label>Method<select id="lsOp" onchange="listOp()"></select></label>' +
+    '<label id="lsL0">arg<input type="text" id="lsA0" oninput="listRun()"></label>' +
+    '<label id="lsL1">arg<input type="text" id="lsA1" oninput="listRun()"></label>' +
+    '<label id="lsL2">arg<input type="text" id="lsA2" oninput="listRun()"></label></div>' +
+    '<div class="lab-out" id="lsOut"></div>' +
+    tryBox('Run <code>slice(1, 3)</code> and <code>splice(1, 2)</code> with the same numbers. One leaves the original alone and one does not. Then compare Python\'s <code>sort()</code> with <code>sorted()</code>: which one hands you a new list and which returns nothing?')
+  ) + lsec('lst-notes', 'What to take from it',
+    '<ul><li>A method that <strong>changes the list in place</strong> (append, remove, sort, splice) usually returns nothing useful. Python\'s <code>sort()</code> returns <code>None</code>, so <code>x = items.sort()</code> leaves <code>x</code> empty-handed.</li>' +
+    '<li><code>slice(start, end)</code> copies a range and stops <em>before</em> <code>end</code>. The original list is untouched.</li>' +
+    '<li><code>splice(start, deleteCount, ...)</code> removes and/or inserts at a position and <em>returns the removed items</em>.</li>' +
+    '<li><code>remove(value)</code> deletes the first match only, and raises an error if the value is absent.</li>' +
+    '<li><code>forEach</code> runs a function on each element and returns nothing.</li>' +
+    '<li>Dictionaries store key-value pairs: look up by key, not by position (<code>d["name"]</code> in Python).</li></ul>');
+}
+function listInit() { listLang(); }
+function listLang() {
+  const lang = labVal('lsLang');
+  const sel = document.getElementById('lsOp');
+  sel.innerHTML = Object.keys(LIST_OPS[lang]).map(k => '<option value="' + k + '">' + k + '</option>').join('');
+  listOp();
+}
+function listOp() {
+  const lang = labVal('lsLang'), op = LIST_OPS[lang][labVal('lsOp')];
+  for (let i = 0; i < 3; i++) {
+    const lab = document.getElementById('lsL' + i);
+    if (i < op.args.length) {
+      lab.style.display = 'flex';
+      lab.firstChild.nodeValue = op.args[i];
+      document.getElementById('lsA' + i).value = op.d[i];
+    } else lab.style.display = 'none';
+  }
+  listRun();
+}
+function listParse(s) {
+  return s.split(',').map(x => x.trim()).filter(x => x !== '').map(Number).filter(x => !isNaN(x));
+}
+function listBoxes(a, cls) {
+  return '<div class="cells">' + (a.length ? a.map(v => '<div class="cell ' + (cls || '') + '"><b>' + escapeHtml(fmt(v)) + '</b></div>').join('') : '<div class="lab-note">(empty)</div>') + '</div>';
+}
+function listRun() {
+  const lang = labVal('lsLang'), name = labVal('lsOp'), op = LIST_OPS[lang][name];
+  if (!op) return;
+  const base = listParse(labVal('lsBase'));
+  let items = base.slice();
+  const a = [labVal('lsA0').trim(), labVal('lsA1').trim(), labVal('lsA2')];
+  let ret = '—', err = '', extra = '';
+  const num = s => { const v = Number(s); return s === '' || isNaN(v) ? NaN : v; };
+  let code = op.code;
+  if (lang === 'py') {
+    if (name === 'append') { const v = num(a[0]); if (isNaN(v)) err = 'Enter a number to append.'; else { items.push(v); ret = 'None'; } code = code.replace('{0}', fmt(v)); }
+    if (name === 'remove') {
+      const v = num(a[0]); code = code.replace('{0}', fmt(v));
+      if (isNaN(v)) err = 'Enter a number to remove.';
+      else { const k = items.indexOf(v); if (k < 0) err = 'ValueError: list.remove(x): x not in list'; else { items.splice(k, 1); ret = 'None'; } }
+    }
+    if (name === 'sort') { items.sort((x, y) => x - y); ret = 'None'; }
+    if (name === 'sorted') { ret = '[' + items.slice().sort((x, y) => x - y).map(fmt).join(', ') + ']  (a new list; items is unchanged)'; }
+  } else {
+    if (name === 'slice') {
+      let s = a[0] === '' ? undefined : num(a[0]), e = a[1] === '' ? undefined : num(a[1]);
+      if (Number.isNaN(s) || Number.isNaN(e)) err = 'Use whole numbers, or leave a box empty.';
+      else { ret = '[' + items.slice(s, e).map(fmt).join(', ') + ']'; }
+      code = code.replace('{0}', a[0]).replace(', {1}', a[1] === '' ? '' : ', ' + a[1]);
+    }
+    if (name === 'splice') {
+      const s = num(a[0]), d = num(a[1]);
+      const ins = listParse(a[2]);
+      if (isNaN(s) || isNaN(d)) err = 'start and deleteCount must be numbers.';
+      else { const removed = items.splice(s, Math.max(0, d), ...ins); ret = '[' + removed.map(fmt).join(', ') + ']  (the removed items)'; }
+      code = code.replace('{0}', a[0]).replace('{1}', a[1]).replace('{2}', ins.length ? ', ' + ins.map(fmt).join(', ') : '');
+    }
+    if (name === 'forEach') { extra = '<div class="lab-note">Callback collected: [' + items.map(n => fmt(n * 2)).join(', ') + '] in <code>out</code>. forEach itself returns undefined.</div>'; ret = 'undefined'; }
+  }
+  const changed = JSON.stringify(items) !== JSON.stringify(base);
+  document.getElementById('lsOut').innerHTML =
+    '<div class="lab-note">Code</div>' + LC(code) +
+    '<div class="lab-note">Before</div>' + listBoxes(base) +
+    (err ? '<div class="lab-err">' + escapeHtml(err) + '</div>' :
+      '<div class="lab-note">After (the list variable)</div>' + listBoxes(items, changed ? 'sel' : '') +
+      '<div class="stat-line"><span>Return value: <b>' + escapeHtml(ret) + '</b></span><span>Original list changed: <b>' + (changed ? 'yes' : 'no') + '</b></span></div>' + extra);
+}
+
+/* =============== C2 · Concepts =============== */
+function progConceptsHtml() {
+  return lsec('abs', 'Abstraction and decomposition',
+    '<p><strong>Abstraction</strong> hides detail you do not need so you can work with the idea (a function called <code>send_email</code> without knowing the network code). <strong>Decomposition</strong> breaks a big problem into smaller parts you can solve one at a time.</p>' +
+    tryBox('Take "run a school library" and split it into three sub-problems. Then name one detail you could hide behind each.')) +
+  lsec('types', 'Variables and data types',
+    '<table><tr><th>Type</th><th>Python</th><th>Example</th></tr><tr><td>Integer</td><td>int</td><td><code>12</code></td></tr><tr><td>Decimal</td><td>float</td><td><code>3.5</code></td></tr><tr><td>Text</td><td>str</td><td><code>"12"</code></td></tr><tr><td>True/false</td><td>bool</td><td><code>True</code></td></tr></table>' +
+    '<p>The quoted <code>"12"</code> is text, not a number. Mixing them in arithmetic raises a type error.</p>' + LC('print("5" + "5")   # 55  (joins text)\nprint(5 + 5)       # 10  (adds numbers)\nprint("5" + 5)     # TypeError')) +
+  lsec('ops', 'Operators',
+    '<ul><li>Arithmetic: <code>+ - * / // % **</code>. <code>//</code> divides and drops the fraction, <code>%</code> gives the remainder.</li>' +
+    '<li>Comparison: <code>== != &lt; &gt; &lt;= &gt;=</code>. One <code>=</code> assigns; <code>==</code> compares.</li>' +
+    '<li>Logical: <code>and</code>, <code>or</code>, <code>not</code>.</li></ul>' + LC('print(17 // 5)   # 3\nprint(17 % 5)    # 2\nprint(2 ** 3)    # 8')) +
+  lsec('flow', 'Sequence, selection, iteration',
+    '<p><strong>Sequence</strong> runs statements top to bottom. <strong>Selection</strong> (<code>if</code>/<code>else</code>) chooses a path. <strong>Iteration</strong> (<code>for</code>, <code>while</code>) repeats.</p>' +
+    LC('total = 0\nfor n in [4, 7, 9]:\n    if n > 5:\n        total = total + n\nprint(total)   # 16') +
+    tryBox('Trace that loop by hand with a table of <code>n</code> and <code>total</code> after each pass before you check the output.')) +
+  lsec('func', 'Functions, methods, parameters, packages',
+    '<ul><li>A <strong>function</strong> is reusable code. <strong>Parameters</strong> are the inputs in its definition; <strong>arguments</strong> are the values you pass in. A <code>return</code> sends a value back.</li>' +
+    '<li>A <strong>method</strong> is a function that belongs to an object, called with a dot: <code>items.append(3)</code>.</li>' +
+    '<li>A <strong>package</strong> (or library) is a bundle of ready-made code you bring in with <code>import</code>.</li></ul>' +
+    LC('def area(w, h):\n    return w * h\n\nprint(area(3, 4))   # 12'));
+}
+
+/* =============== C3 · Search stepper =============== */
+const SRCH = { trace: [], step: 0 };
+function searchHtml() {
+  return lsec('srch', 'Linear versus binary search',
+    '<div class="lab-controls"><label>Sorted list<input type="text" id="srList" style="width:250px" value="3, 8, 14, 21, 27, 33, 40, 52, 61, 75, 88" oninput="srchBuild()"></label>' +
+    '<label>Target<input type="number" id="srT" value="52" oninput="srchBuild()"></label>' +
+    '<label>Algorithm<select id="srA" onchange="srchBuild()"><option value="lin">Linear</option><option value="bin">Binary</option></select></label></div>' +
+    '<div class="lab-controls"><button class="btn" onclick="srchStep(-1)">← Back</button><button class="btn primary" onclick="srchStep(1)">Step →</button><button class="btn" onclick="srchEnd()">Run to end</button><button class="btn" onclick="srchReset()">Reset</button></div>' +
+    '<div class="lab-out" id="srOut"></div>' +
+    tryBox('Search for the first item, then the last item, then a number that is not in the list. Do it with both algorithms and compare the comparison counts. Binary search needs a sorted list; this lab sorts yours for you.')
+  ) + lsec('srch-notes', 'What to take from it',
+    '<ul><li><strong>Linear search</strong> checks items one by one. Worst case is <code>n</code> checks, O(n). It works on unsorted data.</li>' +
+    '<li><strong>Binary search</strong> checks the middle and throws away half each time. Worst case is about log₂(n) checks, O(log n). The data must be sorted.</li>' +
+    '<li>Doubling the list adds only <em>one</em> more step to binary search.</li></ul>');
+}
+function srchBuild() {
+  const arr = listParse(labVal('srList')).sort((a, b) => a - b);
+  const t = labNum('srT', 0), algo = labVal('srA');
+  const tr = [];
+  if (algo === 'lin') {
+    for (let i = 0; i < arr.length; i++) {
+      const hit = arr[i] === t;
+      tr.push({ look: i, lo: 0, hi: arr.length - 1, hit, msg: 'Check index ' + i + ': ' + arr[i] + (hit ? ' equals ' + t + '. Found.' : ' is not ' + t + '. Move on.') });
+      if (hit) break;
+    }
+    if (!tr.length || !tr[tr.length - 1].hit) tr.push({ look: -1, lo: 0, hi: arr.length - 1, hit: false, end: true, msg: 'Reached the end of the list. ' + t + ' is not in it.' });
+  } else {
+    let lo = 0, hi = arr.length - 1;
+    while (lo <= hi) {
+      const mid = Math.floor((lo + hi) / 2), v = arr[mid];
+      if (v === t) { tr.push({ look: mid, lo, hi, hit: true, msg: 'lo=' + lo + ', hi=' + hi + ', mid=' + mid + '. arr[' + mid + '] = ' + v + ' equals ' + t + '. Found.' }); lo = hi + 1; break; }
+      if (v < t) { tr.push({ look: mid, lo, hi, msg: 'lo=' + lo + ', hi=' + hi + ', mid=' + mid + '. arr[' + mid + '] = ' + v + ' is less than ' + t + ', so everything left of it is out. lo becomes ' + (mid + 1) + '.' }); lo = mid + 1; }
+      else { tr.push({ look: mid, lo, hi, msg: 'lo=' + lo + ', hi=' + hi + ', mid=' + mid + '. arr[' + mid + '] = ' + v + ' is greater than ' + t + ', so everything right of it is out. hi becomes ' + (mid - 1) + '.' }); hi = mid - 1; }
+    }
+    if (!tr.length || !tr[tr.length - 1].hit) tr.push({ look: -1, lo: 0, hi: -1, hit: false, end: true, msg: 'lo passed hi, so the range is empty. ' + t + ' is not in the list.' });
+  }
+  SRCH.arr = arr; SRCH.t = t; SRCH.trace = tr; SRCH.step = 0; SRCH.algo = algo;
+  srchDraw();
+}
+function srchStep(d) { SRCH.step = Math.max(0, Math.min(SRCH.trace.length - 1, SRCH.step + d)); srchDraw(); }
+function srchEnd() { SRCH.step = SRCH.trace.length - 1; srchDraw(); }
+function srchReset() { SRCH.step = 0; srchDraw(); }
+function srchDraw() {
+  const arr = SRCH.arr, s = SRCH.trace[SRCH.step], el = document.getElementById('srOut');
+  if (!el) return;
+  if (!arr.length) { el.innerHTML = '<div class="lab-err">Enter some numbers separated by commas.</div>'; return; }
+  let cells = '<div class="cells">';
+  arr.forEach((v, i) => {
+    let cls = '';
+    if (SRCH.algo === 'bin') {
+      if (i < s.lo || i > s.hi) cls = 'out';
+    } else if (i < s.look) cls = 'out';
+    if (i === s.look) cls = s.hit ? 'hit' : 'look';
+    cells += '<div class="cell ' + cls + '"><b>' + v + '</b><i>' + i + '</i></div>';
+  });
+  cells += '</div>';
+  const n = arr.length;
+  const worstBin = Math.floor(Math.log2(n)) + 1;
+  el.innerHTML = cells + '<div class="step-msg">' + escapeHtml(s.msg) + '</div>' +
+    '<div class="stat-line"><span>Comparisons so far: <b>' + SRCH.trace.slice(0, SRCH.step + 1).filter(x => x.look >= 0).length + '</b></span>' +
+    '<span>List size n: <b>' + n + '</b></span><span>Worst case here: linear <b>' + n + '</b>, binary <b>' + worstBin + '</b></span></div>';
+}
+
+/* =============== C3 · Big O growth =============== */
+const GROW = {
+  O1: { name: 'O(1)', col: '#1D9E75', f: n => 1 },
+  Olog: { name: 'O(log n)', col: '#2563A8', f: n => Math.log2(n) },
+  On: { name: 'O(n)', col: '#B45309', f: n => n },
+  Onlog: { name: 'O(n log n)', col: '#534AB7', f: n => n * Math.log2(n) },
+  On2: { name: 'O(n²)', col: '#A32D2D', f: n => n * n }
+};
+const GROW_ON = { O1: true, Olog: true, On: true, Onlog: true, On2: true };
+function growthHtml() {
+  let leg = '<div class="legend">';
+  Object.keys(GROW).forEach(k => {
+    leg += '<label><input type="checkbox" checked onchange="growToggle(\'' + k + '\', this.checked)"><span style="color:' + GROW[k].col + ';font-weight:700">' + GROW[k].name + '</span></label>';
+  });
+  leg += '</div>';
+  return lsec('grow', 'How operation counts grow',
+    '<div class="lab-controls"><label>Input size n: <span id="gnV">16</span><input type="range" id="gn" min="2" max="256" value="16" style="width:260px" oninput="growDraw()"></label></div>' +
+    leg + '<div id="growChart"></div><div class="lab-out" id="growTable"></div>' +
+    tryBox('Untick O(n²) so the other curves become readable. Then drag n from 16 to 32 and watch which rows double, which add one, and which quadruple.')
+  ) + lsec('eval', 'Evaluating an algorithm',
+    '<ul><li><strong>Big O</strong> describes how work grows with input size, usually for the worst case, and ignores constants. It tells you about <em>scaling</em>.</li>' +
+    '<li><strong>Benchmarking</strong> times real code on a real machine. It captures constants and hardware, but only for the inputs and machine you tried.</li>' +
+    '<li><strong>Profiling</strong> finds where a running program spends its time or memory so you know what to fix first.</li>' +
+    '<li>Efficient and <em>effective</em> are different questions: an algorithm must be correct for the problem before speed matters. For small inputs, a simpler algorithm can be the better choice.</li>' +
+    '<li>Memory use counts too. A faster method that needs a large extra copy of the data is a trade-off, not a free win.</li></ul>');
+}
+function growToggle(k, on) { GROW_ON[k] = on; growDraw(); }
+function growDraw() {
+  const N = Math.round(labNum('gn', 16));
+  document.getElementById('gnV').textContent = N;
+  const keys = Object.keys(GROW).filter(k => GROW_ON[k]);
+  const W = 640, H = 300, L = 46, R = 78, T = 14, B = 30;
+  let ymax = 1;
+  keys.forEach(k => { ymax = Math.max(ymax, GROW[k].f(N)); });
+  const X = n => L + (n - 1) / (N - 1) * (W - L - R);
+  const Y = v => H - B - v / ymax * (H - T - B);
+  let svg = '<svg class="chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Growth of operation counts as n increases">';
+  for (let g = 0; g <= 4; g++) {
+    const v = ymax * g / 4, y = Y(v);
+    svg += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y + '" y2="' + y + '" stroke="#e0ddd6" stroke-width="0.5"/>' +
+      '<text x="' + (L - 6) + '" y="' + (y + 4) + '" text-anchor="end" font-size="11" fill="#6b6b67">' + fmt(Math.round(v * 10) / 10) + '</text>';
+  }
+  svg += '<text x="' + ((L + W - R) / 2) + '" y="' + (H - 6) + '" text-anchor="middle" font-size="11" fill="#6b6b67">input size n (1 to ' + N + ')</text>';
+  const ends = [];
+  keys.forEach(k => {
+    let d = '';
+    for (let i = 0; i <= 80; i++) {
+      const n = 1 + (N - 1) * i / 80;
+      d += (i ? 'L' : 'M') + X(n).toFixed(1) + ' ' + Y(GROW[k].f(n)).toFixed(1);
+    }
+    svg += '<path d="' + d + '" fill="none" stroke="' + GROW[k].col + '" stroke-width="2.2"/>';
+    ends.push({ k, y: Y(GROW[k].f(N)) });
+  });
+  ends.sort((a, b) => a.y - b.y);
+  let lastY = -99;
+  ends.forEach(e => {
+    let y = Math.max(e.y, lastY + 13); lastY = y;
+    svg += '<text x="' + (W - R + 6) + '" y="' + (y + 4) + '" font-size="11.5" font-weight="700" fill="' + GROW[e.k].col + '">' + GROW[e.k].name + '</text>';
+  });
+  svg += '</svg>';
+  document.getElementById('growChart').innerHTML = svg;
+  let t = '<table><tr><th>Growth</th><th class="num">Operations at n = ' + N + '</th><th class="num">At n = ' + (2 * N) + '</th><th>When n doubles</th></tr>';
+  Object.keys(GROW).forEach(k => {
+    const a = GROW[k].f(N), b = GROW[k].f(2 * N);
+    let note;
+    if (k === 'O1') note = 'stays the same';
+    else if (k === 'Olog') note = 'adds about 1';
+    else note = '× ' + fmt(Math.round(b / a * 100) / 100);
+    t += '<tr><td><b style="color:' + GROW[k].col + '">' + GROW[k].name + '</b></td><td class="num">' + fmt(Math.round(a * 10) / 10) + '</td><td class="num">' + fmt(Math.round(b * 10) / 10) + '</td><td>' + note + '</td></tr>';
+  });
+  document.getElementById('growTable').innerHTML = t + '</table>';
+}
+
+/* =============== C3 · Sort & structures =============== */
+const BUB = { trace: [], step: 0 };
+function sortHtml() {
+  return lsec('bub', 'Bubble sort, one comparison at a time',
+    '<div class="lab-controls"><label>List<input type="text" id="bbList" style="width:200px" value="5, 1, 4, 2, 8" oninput="bubBuild()"></label>' +
+    '<button class="btn" onclick="bubStep(-1)">← Back</button><button class="btn primary" onclick="bubStep(1)">Step →</button><button class="btn" onclick="bubEnd()">Run to end</button><button class="btn" onclick="bubReset()">Reset</button></div>' +
+    '<div class="lab-out" id="bbOut"></div>' +
+    tryBox('Sort an already-sorted list and count the steps; then reverse it. Bubble sort needs a pass with zero swaps before it can stop, and a reversed list is its worst case.')
+  ) + lsec('sorts', 'Three sorts to recognize',
+    '<table><tr><th>Sort</th><th>Idea</th><th>Typical time</th></tr>' +
+    '<tr><td>Bubble</td><td>Compare neighbors, swap if out of order, repeat passes.</td><td>O(n²)</td></tr>' +
+    '<tr><td>Merge</td><td>Split in halves, sort each, merge the sorted halves.</td><td>O(n log n)</td></tr>' +
+    '<tr><td>Quick</td><td>Pick a pivot, put smaller items on one side and larger on the other, repeat on each side.</td><td>O(n log n) average; O(n²) worst case</td></tr></table>') +
+  lsec('ds', 'Data structure trade-offs',
+    '<table><tr><th>Structure</th><th>Strength</th><th>Weakness</th></tr>' +
+    '<tr><td>Array</td><td>Jump to any index in O(1).</td><td>Inserting or deleting in the middle shifts items, O(n).</td></tr>' +
+    '<tr><td>Linked list</td><td>Insert or delete at a known node in O(1).</td><td>Reaching an item means walking the chain, O(n).</td></tr>' +
+    '<tr><td>Hash table</td><td>Average O(1) lookup, insert and delete by key.</td><td>No useful order; many collisions slow it toward O(n).</td></tr>' +
+    '<tr><td>Stack</td><td>Last in, first out; push and pop in O(1).</td><td>Only the top item is reachable.</td></tr>' +
+    '<tr><td>Queue</td><td>First in, first out; enqueue and dequeue in O(1).</td><td>Only the front is served.</td></tr>' +
+    '<tr><td>Balanced tree</td><td>Search, insert and delete in O(log n), data stays ordered.</td><td>More complex than an array or hash table.</td></tr></table>');
+}
+function bubBuild() {
+  const a = listParse(labVal('bbList')).slice(0, 12);
+  const tr = [{ arr: a.slice(), pair: null, sw: false, msg: 'Starting list. Each pass compares neighbors and swaps those that are out of order.', sortedFrom: a.length }];
+  const arr = a.slice();
+  let n = arr.length, pass = 0, swapsTotal = 0, cmp = 0;
+  let swapped = true;
+  while (swapped && n > 1) {
+    swapped = false; pass++;
+    for (let j = 0; j < n - 1; j++) {
+      cmp++;
+      if (arr[j] > arr[j + 1]) {
+        const x = arr[j]; arr[j] = arr[j + 1]; arr[j + 1] = x; swapped = true; swapsTotal++;
+        tr.push({ arr: arr.slice(), pair: j, sw: true, sortedFrom: n, msg: 'Pass ' + pass + ': ' + arr[j + 1] + ' is greater than ' + arr[j] + ', so swap them.', cmp, swapsTotal });
+      } else {
+        tr.push({ arr: arr.slice(), pair: j, sw: false, sortedFrom: n, msg: 'Pass ' + pass + ': ' + arr[j] + ' and ' + arr[j + 1] + ' are in order. No swap.', cmp, swapsTotal });
+      }
+    }
+    n--;
+    tr.push({ arr: arr.slice(), pair: null, sw: false, sortedFrom: n, msg: 'End of pass ' + pass + '. ' + (swapped ? 'At least one swap happened, so another pass is needed.' : 'No swaps this pass, so the list is sorted.'), cmp, swapsTotal });
+  }
+  if (a.length <= 1) tr.push({ arr: a.slice(), pair: null, sw: false, sortedFrom: 0, msg: 'Nothing to sort.', cmp: 0, swapsTotal: 0 });
+  BUB.trace = tr; BUB.step = 0;
+  bubDraw();
+}
+function bubStep(d) { BUB.step = Math.max(0, Math.min(BUB.trace.length - 1, BUB.step + d)); bubDraw(); }
+function bubEnd() { BUB.step = BUB.trace.length - 1; bubDraw(); }
+function bubReset() { BUB.step = 0; bubDraw(); }
+function bubDraw() {
+  const s = BUB.trace[BUB.step], el = document.getElementById('bbOut');
+  if (!el) return;
+  let cells = '<div class="cells">';
+  s.arr.forEach((v, i) => {
+    let cls = '';
+    if (i >= s.sortedFrom && s.sortedFrom < s.arr.length) cls = 'done';
+    if (s.pair !== null && (i === s.pair || i === s.pair + 1)) cls = s.sw ? 'swap' : 'look';
+    cells += '<div class="cell ' + cls + '"><b>' + v + '</b><i>' + i + '</i></div>';
+  });
+  cells += '</div>';
+  el.innerHTML = cells + '<div class="step-msg">' + escapeHtml(s.msg) + '</div>' +
+    '<div class="stat-line"><span>Comparisons: <b>' + (s.cmp || 0) + '</b></span><span>Swaps: <b>' + (s.swapsTotal || 0) + '</b></span><span>Step ' + (BUB.step + 1) + ' of ' + BUB.trace.length + '</span></div>';
+}
+
+/* =============== C4 · Profiler =============== */
+const PROF_DEFAULT = 'id,name,dept,score,hours\n1,Ana,Sales,82,38\n2,Ben,Sales,75,41\n3,Cara,IT,91,40\n4,Dev,IT,,37\n5,Eli,HR,68,35\n6,Fay,IT,88,40\n7,Gus,Sales,75,41\n8,Hana,HR,,36\n9,Ian,IT,240,39\n10,Jo,Sales,79,42\n10,Jo,Sales,79,42';
+function profileHtml() {
+  return lsec('prof', 'Edit the data, watch the profile',
+    '<p>Comma-separated, first row is the header. Empty cells and NA / NaN / null count as missing. Up to 200 rows.</p>' +
+    '<textarea class="lab-data" id="pfData" spellcheck="false" oninput="profRun()">' + escapeHtml(PROF_DEFAULT) + '</textarea>' +
+    '<div class="lab-controls"><button class="btn" onclick="profReset()">Reset dataset</button></div>' +
+    '<div class="lab-out" id="pfOut"></div>' +
+    tryBox('Change 240 to 90. Compare the mean, standard deviation and outlier list before and after, and note how little the median moves. Then fill in the missing scores and see the null counts drop to zero.')
+  ) + lsec('prof-notes', 'Commands this panel mirrors',
+    '<table><tr><th>Question</th><th>pandas</th></tr>' +
+    '<tr><td>Summary stats per numeric column</td><td><code>df.describe()</code></td></tr>' +
+    '<tr><td>Missing values per column</td><td><code>df.isnull().sum()</code></td></tr>' +
+    '<tr><td>Distinct values per column</td><td><code>df.nunique()</code></td></tr>' +
+    '<tr><td>Fully repeated rows</td><td><code>df.duplicated().sum()</code></td></tr>' +
+    '<tr><td>Average by group</td><td><code>df.groupby("dept")["score"].mean()</code></td></tr></table>' +
+    '<p>Mean is pulled by outliers; the median is not. When the mean sits far from the median, suspect skew or an outlier. Standard deviation here is the sample version, which is what pandas uses.</p>');
+}
+function profReset() { document.getElementById('pfData').value = PROF_DEFAULT; profRun(); }
+function profParse(text) {
+  const lines = text.split(/\r?\n/).filter(l => l.trim() !== '').slice(0, 201);
+  if (lines.length < 2) return null;
+  const head = lines[0].split(',').map(s => s.trim()).slice(0, 12);
+  const rows = lines.slice(1).map(l => {
+    const c = l.split(',').map(s => s.trim());
+    return head.map((h, i) => { const v = c[i] === undefined ? '' : c[i]; return /^(|na|nan|null|none)$/i.test(v) ? null : v; });
+  });
+  return { head, rows };
+}
+function pctl(sorted, p) {
+  const idx = (sorted.length - 1) * p, lo = Math.floor(idx), hi = Math.ceil(idx);
+  return sorted[lo] + (sorted[hi] - sorted[lo]) * (idx - lo);
+}
+function profRun() {
+  const d = profParse(labVal('pfData')), out = document.getElementById('pfOut');
+  if (!d) { out.innerHTML = '<div class="lab-err">Need a header row and at least one data row.</div>'; return; }
+  const { head, rows } = d;
+  const cols = head.map((h, c) => {
+    const vals = rows.map(r => r[c]);
+    const present = vals.filter(v => v !== null);
+    const numeric = present.length > 0 && present.every(v => v !== '' && !isNaN(Number(v)));
+    const info = { name: h, n: present.length, nulls: vals.length - present.length, uniq: new Set(present).size, numeric, outIdx: new Set() };
+    if (numeric) {
+      const nums = present.map(Number), s = nums.slice().sort((a, b) => a - b);
+      const mean = nums.reduce((a, b) => a + b, 0) / nums.length;
+      info.mean = mean; info.min = s[0]; info.max = s[s.length - 1];
+      info.std = nums.length > 1 ? Math.sqrt(nums.reduce((a, b) => a + (b - mean) * (b - mean), 0) / (nums.length - 1)) : NaN;
+      info.q1 = pctl(s, 0.25); info.med = pctl(s, 0.5); info.q3 = pctl(s, 0.75);
+      const cnt = {}; nums.forEach(v => { cnt[v] = (cnt[v] || 0) + 1; });
+      const mx = Math.max.apply(null, Object.values(cnt));
+      info.mode = mx > 1 ? Object.keys(cnt).filter(k => cnt[k] === mx).slice(0, 3).join(', ') : 'none (no repeats)';
+      const iqr = info.q3 - info.q1, lo = info.q1 - 1.5 * iqr, hi = info.q3 + 1.5 * iqr;
+      info.lo = lo; info.hi = hi;
+      vals.forEach((v, i) => { if (v !== null && (Number(v) < lo || Number(v) > hi)) info.outIdx.add(i); });
+    } else if (present.length) {
+      const cnt = {}; present.forEach(v => { cnt[v] = (cnt[v] || 0) + 1; });
+      const top = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a])[0];
+      info.top = top; info.freq = cnt[top];
+    }
+    return info;
+  });
+  const seen = {}, dupRows = new Set();
+  rows.forEach((r, i) => { const k = JSON.stringify(r); if (seen[k] !== undefined) dupRows.add(i); else seen[k] = i; });
+  // data preview
+  let prev = '<table><tr><th>#</th>' + head.map(h => '<th>' + escapeHtml(h) + '</th>').join('') + '</tr>';
+  rows.forEach((r, i) => {
+    prev += '<tr class="' + (dupRows.has(i) ? 'dupe' : '') + '"><td class="num">' + i + '</td>' + r.map((v, c) => {
+      if (v === null) return '<td class="miss">missing</td>';
+      if (cols[c].outIdx.has(i)) return '<td class="bad">' + escapeHtml(v) + '</td>';
+      return '<td>' + escapeHtml(v) + '</td>';
+    }).join('') + '</tr>';
+  });
+  prev += '</table><div class="lab-note">Amber = missing value. Red cell = outlier by the 1.5 × IQR rule. Red row = exact repeat of an earlier row.</div>';
+  // profile table
+  let pt = '<table><tr><th>Column</th><th class="num">Count</th><th class="num">Missing</th><th class="num">Unique</th><th>Type</th><th>Summary</th></tr>';
+  cols.forEach(c => {
+    let sm = '—';
+    if (c.numeric) sm = 'mean ' + fmt(c.mean) + ' · median ' + fmt(c.med) + ' · std ' + (isNaN(c.std) ? 'n/a' : fmt(c.std)) + ' · min ' + fmt(c.min) + ' · max ' + fmt(c.max) + ' · mode ' + c.mode;
+    else if (c.top !== undefined) sm = 'most common: ' + escapeHtml(c.top) + ' (' + c.freq + ')';
+    pt += '<tr><td><b>' + escapeHtml(c.name) + '</b></td><td class="num">' + c.n + '</td><td class="num">' + c.nulls + '</td><td class="num">' + c.uniq + '</td><td>' + (c.numeric ? 'numeric' : 'text') + '</td><td>' + sm + '</td></tr>';
+  });
+  pt += '</table>';
+  const outl = cols.filter(c => c.numeric).map(c => {
+    const vs = [...c.outIdx].map(i => rows[i][head.indexOf(c.name)]);
+    return '<li><b>' + escapeHtml(c.name) + '</b>: fences ' + fmt(c.lo) + ' to ' + fmt(c.hi) + ' (Q1 ' + fmt(c.q1) + ', Q3 ' + fmt(c.q3) + ') → ' + (vs.length ? 'outliers: ' + vs.map(escapeHtml).join(', ') : 'none') + '</li>';
+  }).join('');
+  const first = cols[0], keyUnique = first.uniq === rows.length && first.nulls === 0;
+  const totalNulls = cols.reduce((a, c) => a + c.nulls, 0);
+  const sum = '<div class="stat-line"><span>Rows: <b>' + rows.length + '</b></span><span>Columns: <b>' + head.length + '</b></span><span>Missing cells: <b>' + totalNulls + '</b></span><span>Repeated rows: <b>' + dupRows.size + '</b></span>' +
+    '<span>First column "' + escapeHtml(first.name) + '" unique: <b>' + (keyUnique ? 'yes' : 'no') + '</b></span></div>';
+  // groupby
+  const cat = cols.filter(c => !c.numeric && c.uniq > 0 && c.uniq < rows.length), num = cols.filter(c => c.numeric);
+  let gb = '';
+  if (cat.length && num.length) {
+    const gi = head.indexOf(cat[cat.length - 1].name), ni = head.indexOf(num[Math.min(num.length - 1, num.length > 1 ? 1 : 0)].name);
+    const g = {};
+    rows.forEach(r => { if (r[gi] === null) return; (g[r[gi]] = g[r[gi]] || []).push(r[ni]); });
+    gb = '<div class="lab-note">Group average (missing values are skipped, as in pandas): <code>df.groupby("' + escapeHtml(head[gi]) + '")["' + escapeHtml(head[ni]) + '"].mean()</code></div><table><tr><th>' + escapeHtml(head[gi]) + '</th><th class="num">mean ' + escapeHtml(head[ni]) + '</th><th class="num">rows</th></tr>' +
+      Object.keys(g).sort().map(k => { const v = g[k].filter(x => x !== null).map(Number); return '<tr><td>' + escapeHtml(k) + '</td><td class="num">' + (v.length ? fmt(v.reduce((a, b) => a + b, 0) / v.length) : 'NaN') + '</td><td class="num">' + g[k].length + '</td></tr>'; }).join('') + '</table>';
+  }
+  out.innerHTML = sum + '<div class="lab-note"><b>Profile</b> (describe / isnull / nunique)</div>' + pt +
+    (outl ? '<div class="lab-note"><b>Outlier check</b> (value below Q1 − 1.5·IQR or above Q3 + 1.5·IQR)</div><ul style="font-size:13px;line-height:1.6">' + outl + '</ul>' : '') +
+    gb + '<div class="lab-note"><b>Data</b></div>' + prev;
+}
+
+/* =============== C4 · Subsetting =============== */
+const SUB_COLS = ['name', 'dept', 'score', 'hours'];
+const SUB_ROWS = [
+  ['Ana', 'Sales', 82, 38], ['Ben', 'Sales', 75, 41], ['Cara', 'IT', 91, 40], ['Dev', 'IT', 70, 37],
+  ['Eli', 'HR', 68, 35], ['Fay', 'IT', 88, 40], ['Gus', 'Sales', 75, 41], ['Hana', 'HR', 94, 36]
+];
+function subsetHtml() {
+  const colSel = id => '<select id="' + id + '" onchange="subRun()">' + SUB_COLS.map(c => '<option>' + c + '</option>').join('') + '</select>';
+  const opSel = id => '<select id="' + id + '" onchange="subRun()"><option>&gt;</option><option>&gt;=</option><option>&lt;</option><option>&lt;=</option><option>==</option><option>!=</option></select>';
+  return lsec('sub', 'Build a subset: rows, columns, or both',
+    '<p><strong>Columns to keep:</strong> ' + SUB_COLS.map(c => '<label style="margin-right:10px"><input type="checkbox" class="subCol" value="' + c + '" checked onchange="subRun()"> ' + c + '</label>').join('') + '</p>' +
+    '<div class="lab-controls"><label>Filter 1 column' + colSel('f1c') + '</label><label>op' + opSel('f1o') + '</label><label>value<input type="text" id="f1v" value="80" oninput="subRun()"></label>' +
+    '<label>Combine<select id="fj" onchange="subRun()"><option value="none">(no second filter)</option><option value="and">AND</option><option value="or">OR</option></select></label>' +
+    '<label>Filter 2 column' + colSel('f2c') + '</label><label>op' + opSel('f2o') + '</label><label>value<input type="text" id="f2v" value="IT" oninput="subRun()"></label></div>' +
+    '<div class="lab-out" id="subOut"></div>' +
+    tryBox('Set score &gt; 80 and keep only name and score: rows and columns are both reduced. Then switch to "OR" with dept == IT and compare which rows come in. Notice pandas needs <code>&amp;</code> / <code>|</code> with parentheses, SQL uses AND / OR.')
+  );
+}
+function subInit() {
+  document.getElementById('f1c').value = 'score'; document.getElementById('f2c').value = 'dept'; document.getElementById('f2o').value = '==';
+  subRun();
+}
+function subRun() {
+  const idx = c => SUB_COLS.indexOf(c);
+  const keep = [...document.querySelectorAll('.subCol')].filter(x => x.checked).map(x => x.value);
+  const cond = (cid, oid, vid) => {
+    const col = labVal(cid), op = labVal(oid), raw = labVal(vid).trim();
+    const isNum = col === 'score' || col === 'hours';
+    const val = isNum ? Number(raw) : raw;
+    return { col, op, raw, isNum, val, bad: isNum && (raw === '' || isNaN(val)) };
+  };
+  const c1 = cond('f1c', 'f1o', 'f1v'), c2 = cond('f2c', 'f2o', 'f2v'), j = labVal('fj');
+  const test = (c, row) => {
+    const v = row[idx(c.col)];
+    switch (c.op) { case '>': return v > c.val; case '>=': return v >= c.val; case '<': return v < c.val; case '<=': return v <= c.val; case '==': return v === c.val; default: return v !== c.val; }
+  };
+  const out = document.getElementById('subOut');
+  if (!keep.length) { out.innerHTML = '<div class="lab-err">Keep at least one column.</div>'; return; }
+  if (c1.bad || (j !== 'none' && c2.bad)) { out.innerHTML = '<div class="lab-err">The value for a numeric column must be a number.</div>'; return; }
+  const rows = SUB_ROWS.filter(r => j === 'none' ? test(c1, r) : j === 'and' ? (test(c1, r) && test(c2, r)) : (test(c1, r) || test(c2, r)));
+  const q = c => c.isNum ? c.raw : "'" + c.raw + "'";
+  const pyq = c => c.isNum ? c.raw : "'" + c.raw + "'";
+  const pyC = c => "df['" + c.col + "'] " + c.op + ' ' + pyq(c);
+  const mask = j === 'none' ? pyC(c1) : '(' + pyC(c1) + ') ' + (j === 'and' ? '&' : '|') + ' (' + pyC(c2) + ')';
+  const allCols = keep.length === SUB_COLS.length;
+  const py = 'df.loc[' + mask + (allCols ? '' : ', [' + keep.map(c => "'" + c + "'").join(', ') + ']') + ']';
+  const sqlOp = o => o === '==' ? '=' : o === '!=' ? '<>' : o;
+  const sqlC = c => c.col + ' ' + sqlOp(c.op) + ' ' + q(c);
+  const sql = 'SELECT ' + (allCols ? '*' : keep.join(', ')) + ' FROM df WHERE ' + sqlC(c1) + (j === 'none' ? '' : (j === 'and' ? ' AND ' : ' OR ') + sqlC(c2)) + ';';
+  const ordered = SUB_COLS.filter(c => keep.indexOf(c) >= 0);
+  let t = '<table><tr>' + ordered.map(c => '<th>' + c + '</th>').join('') + '</tr>' +
+    rows.map(r => '<tr>' + ordered.map(c => '<td>' + escapeHtml(r[idx(c)]) + '</td>').join('') + '</tr>').join('') + '</table>';
+  if (!rows.length) t = '<div class="lab-note">No rows match.</div>';
+  out.innerHTML = '<div class="stat-line"><span>Rows kept: <b>' + rows.length + ' of ' + SUB_ROWS.length + '</b></span><span>Columns kept: <b>' + keep.length + ' of ' + SUB_COLS.length + '</b></span></div>' +
+    '<div class="lab-note">pandas</div>' + LC(py) + '<div class="lab-note">SQL</div>' + LC(sql) + t;
+}
+
+/* =============== C4 · Arrays & NumPy =============== */
+const MAT = [[3, 7, 1, 9, 4], [8, 2, 6, 5, 10], [12, 11, 15, 13, 14], [20, 18, 16, 17, 19]];
+function arraysHtml() {
+  const f = id => '<label>' + id.slice(2) + '<input type="text" id="' + id + '" style="width:60px" oninput="npRun()"></label>';
+  return lsec('slice', 'Slice a 2D array',
+    '<p>Slices follow <code>start:stop</code> rules: the start is included, the stop is not, a blank means "to the edge", and a negative counts from the end. Rows come first, then columns.</p>' +
+    '<div class="lab-controls">' + f('npRstart') + f('npRstop') + f('npCstart') + f('npCstop') + '</div>' +
+    '<div class="lab-out" id="npOut"></div>' +
+    tryBox('Try rows <code>1:3</code>, columns <code>2:</code>. Then rows blank, columns <code>-2:</code>. Predict the shape before you look.')
+  ) + lsec('agg', 'Aggregate the slice',
+    '<div class="lab-controls"><label>Function<select id="npF" onchange="npRun()"><option>sum</option><option>mean</option><option>max</option><option>min</option></select></label>' +
+    '<label>axis<select id="npAx" onchange="npRun()"><option value="">none (whole slice)</option><option value="0">0 (down each column)</option><option value="1">1 (across each row)</option></select></label></div>' +
+    '<div class="lab-out" id="npAgg"></div>' +
+    '<p><code>axis=0</code> collapses the rows and leaves one result per column. <code>axis=1</code> collapses the columns and leaves one result per row.</p>'
+  ) + lsec('vec', 'Vectorization and DataFrames',
+    LC('import numpy as np\na = np.array([3, 7, 1, 9])\n\n# loop version\nout = []\nfor x in a:\n    out.append(x * 2)\n\n# vectorized: one expression, applied to every element\nout = a * 2') +
+    '<p>NumPy applies an operation to the whole array at once, which is shorter and much faster than a Python loop. A pandas <strong>DataFrame</strong> is a table of labeled columns built on the same idea: <code>df["score"] * 2</code>, <code>df[df["score"] &gt; 80]</code>, <code>df["score"].mean()</code>.</p>');
+}
+function npInit() { ['npRstart', 'npRstop', 'npCstart', 'npCstop'].forEach(id => { document.getElementById(id).value = ''; }); document.getElementById('npRstart').value = '1'; document.getElementById('npRstop').value = '3'; document.getElementById('npCstart').value = '2'; npRun(); }
+function npRes(raw, len, dflt) {
+  raw = raw.trim();
+  if (raw === '') return { v: dflt, text: '' };
+  if (!/^-?\d+$/.test(raw)) return { err: true };
+  let v = parseInt(raw, 10);
+  if (v < 0) v += len;
+  return { v: Math.max(0, Math.min(len, v)), text: raw };
+}
+function npRun() {
+  const R = MAT.length, C = MAT[0].length;
+  const rs = npRes(labVal('npRstart'), R, 0), re = npRes(labVal('npRstop'), R, R), cs = npRes(labVal('npCstart'), C, 0), ce = npRes(labVal('npCstop'), C, C);
+  const out = document.getElementById('npOut'), agg = document.getElementById('npAgg');
+  if (rs.err || re.err || cs.err || ce.err) { out.innerHTML = '<div class="lab-err">Use whole numbers (negative allowed) or leave a box blank.</div>'; agg.innerHTML = ''; return; }
+  const rows = [], cols = [];
+  for (let i = rs.v; i < re.v; i++) rows.push(i);
+  for (let j = cs.v; j < ce.v; j++) cols.push(j);
+  let g = '<table style="width:auto"><tr><th></th>' + MAT[0].map((_, j) => '<th class="num">' + j + '</th>').join('') + '</tr>';
+  MAT.forEach((r, i) => {
+    g += '<tr><th>' + i + '</th>' + r.map((v, j) => '<td class="num" style="' + (rows.indexOf(i) >= 0 && cols.indexOf(j) >= 0 ? 'background:var(--blue-bg);color:var(--blue);font-weight:700' : '') + '">' + v + '</td>').join('') + '</tr>';
+  });
+  g += '</table>';
+  const expr = 'a[' + rs.text + ':' + re.text + ', ' + cs.text + ':' + ce.text + ']';
+  const sub = rows.map(i => cols.map(j => MAT[i][j]));
+  out.innerHTML = g + '<div class="lab-note">Expression</div>' + LC(expr) +
+    '<div class="stat-line"><span>Shape: <b>(' + rows.length + ', ' + cols.length + ')</b></span><span>Result: <b>' + escapeHtml(JSON.stringify(sub)) + '</b></span></div>';
+  const fn = labVal('npF'), ax = labVal('npAx');
+  if (!rows.length || !cols.length) { agg.innerHTML = '<div class="lab-note">The slice is empty, so there is nothing to aggregate.</div>'; return; }
+  const red = arr => fn === 'sum' ? arr.reduce((a, b) => a + b, 0) : fn === 'mean' ? arr.reduce((a, b) => a + b, 0) / arr.length : fn === 'max' ? Math.max.apply(null, arr) : Math.min.apply(null, arr);
+  let res;
+  if (ax === '') res = fmt(red([].concat.apply([], sub)));
+  else if (ax === '0') res = '[' + cols.map((j, k) => fmt(red(sub.map(r => r[k])))).join(', ') + ']';
+  else res = '[' + sub.map(r => fmt(red(r))).join(', ') + ']';
+  agg.innerHTML = LC(expr + '.' + fn + '(' + (ax === '' ? '' : 'axis=' + ax) + ')') + '<div class="stat-line"><span>Result: <b>' + res + '</b></span></div>';
+}
+
+/* ---------- panel registry ---------- */
+const LAB_PANELS = {
+  'c1/scheduler': { html: schedHtml, init: schedRun },
+  'c1/concepts': { html: osConceptsHtml },
+  'c2/lists': { html: listHtml, init: listInit },
+  'c2/concepts': { html: progConceptsHtml },
+  'c3/search': { html: searchHtml, init: srchBuild },
+  'c3/growth': { html: growthHtml, init: growDraw },
+  'c3/sort': { html: sortHtml, init: bubBuild },
+  'c4/profile': { html: profileHtml, init: profRun },
+  'c4/subset': { html: subsetHtml, init: subInit },
+  'c4/arrays': { html: arraysHtml, init: npInit }
+};
 
 /* ---------------- init ---------------- */
 buildNav();
