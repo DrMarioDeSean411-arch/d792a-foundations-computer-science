@@ -11,13 +11,11 @@ Bookmark this link. Your answers are saved in your browser tab while it stays op
 
 ---
 
-## What Is This?
+What Is This?
 
-This is a full practice exam for the D792A — Foundations of Computer Science competency assessment. It mirrors the structure, difficulty, and question types you will see on the official WGU assessment across all four competencies. Completing this exam and scoring 80% or higher is a strong indicator you are ready.
+A practice exam for the D792A competency assessment, built around the same four competencies and the same kinds of questions as the official D792A supplemental practice tests. Every question here is original. The concepts match the official practice material; the wording does not.
 
-There is **no login, no tracking, and no data sent anywhere** — everything runs entirely in your browser.
-
----
+Scoring 80% or higher is the readiness target. There is no login, no tracking, and no data sent anywhere. Everything runs in your browser.
 
 Exam Structure
 #	Section	Questions	Format	Competency
@@ -34,6 +32,8 @@ Exam Structure
 
 Sections 1–4 split 40% Foundational, 40% Intermediate, 20% Advanced. The simulation uses the same split (20 / 20 / 10).
 
+The Labs button at the right end of the section bar opens four optional, ungraded labs (one per competency). Labs are not counted in any score.
+
 How to Use This Exam
 Sections 1–8 (practice mode)
 Pick a section from the buttons at the top.
@@ -41,6 +41,18 @@ Read the question, including any code or table.
 Click an answer. It locks, and the correct answer, an explanation, and an instructor note appear.
 Use the numbered tabs to jump around. Green is correct, red is wrong.
 Watch the competency breakdown at the bottom. Anything under 80% needs review.
+Review in Lab
+
+After you answer a practice question, a blue Review in Lab button appears under the explanation. It opens the lab panel for that question's topic and highlights the matching section. Back to question returns you to the same question with your answer still locked. Visiting a lab never changes your score.
+
+Lab	Panels	What you can do
+C1 · OS Lab	Scheduler, OS Concepts	Run first-come first-served, round-robin and priority scheduling on the same four processes; edit burst times, priorities and the quantum; review the four OS benefits, OS types, kernel designs, drivers, file system and memory, and OS tools
+C2 · Code Lab	List Methods, Core Concepts	Run Python (append, remove, sort, sorted) and JavaScript (slice, splice, forEach) methods and compare the list before and after, the return value, and whether the original changed; review abstraction, data types, operators, control flow, and functions
+C3 · Algorithm Lab	Search Stepper, Big O Growth, Sorting & Structures	Step through linear and binary search; chart O(1) to O(n²) growth with a slider; step through bubble sort; compare data structure trade-offs; review benchmarking, profiling, and worst case
+C4 · Data Lab	Profiler, Subsetting, Arrays & NumPy	Edit a small dataset and see counts, missing values, unique values, mean, median, mode, standard deviation, outliers, and repeated rows; build row and column subsets with the matching pandas and SQL; slice a 2D array and aggregate along an axis
+
+Links and the Labs button are locked during the live timed simulation so the simulation stays a fair readiness check. They unlock after you submit, and then appear on every question in the review.
+
 Section 9 (timed simulation)
 
 This section behaves like the real thing.
@@ -51,7 +63,7 @@ Click Submit exam when you are done, or let the clock run out and the attempt su
 You get a score, a breakdown by competency, and a full explanation for every question.
 Click Retake simulation to try again.
 
-Work without notes for the simulation. Treat the score as a readiness check before you schedule the official attempt.
+Work without notes or labs for the simulation. Treat the score as a readiness check before you schedule the official attempt.
 
 Scoring Guide
 Score	What it means
@@ -90,30 +102,9 @@ The topic you found most challenging
 A screenshot of your results (optional but helpful)
 Any questions about topics you missed
 
-Your instructor uses these results to spot common trouble areas across the class and can give targeted feedback before you attempt the official assessme
-## After You Complete the Exam
+Your instructor uses these results to spot common trouble areas across the class and can give targeted feedback before you attempt the official assessment.
 
-**Email your results to your instructor:**
-
-📧 **mario.booker@wgu.edu**
-
-Include the following in your email:
-
-**Subject line:** `D792A Practice Exam Results — [Your Name] — [Date]`
-
-**In the body of your email, include:**
-1. Your overall score (shown in the scoreboard at the top of the exam)
-2. Your score for each of the four competencies (shown in the breakdown bars)
-3. The section or topic you found most challenging
-4. A screenshot of your scoreboard (optional but helpful)
-5. Any questions you have about topics you missed
-
-> I will uses these results to identify common trouble spots across the class and can provide targeted feedback before you attempt the official assessment.
-
----
-
-
----
-
-
-*Practice exam maintained by Dr. Mario Booker · mario.booker@wgu.edu*
+Resources
+Resource	Link
+WGU Student Support	my.wgu.edu
+D792A course materials	Accessed through your WGU student portal
